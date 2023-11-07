@@ -1,9 +1,16 @@
+name: Test-OSX
+
+on: push
+
 jobs:
   build:
     runs-on: macos-latest
-      steps:
+    steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'       
       - name: Install
         run: pip install picture-nnunet-package --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple
       - name: Test
-        run: segment_glioma ./ses-preop/NativeT1c.nii.gz --sessiontype preop
+        run: "segment_glioma ./ses-preop/NativeT1c.nii.gz --sessiontype preop"
