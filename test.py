@@ -2,7 +2,6 @@ import os
 import glob
 from picture_nnunet_package.doInference import do_segmentation
 from nnunet.evaluation.evaluator import aggregate_scores
-from rich import print
 
 sesDirs = glob.glob(f'./test_data/LUMIERE/Patient-025/*')
 for sesDir in sesDirs:
