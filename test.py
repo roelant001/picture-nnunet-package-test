@@ -8,6 +8,7 @@ print(sys.platform)
 sesDirs = glob.glob(f'./test_data/LUMIERE/Patient-025/*')
 for sesDir in sesDirs:
     sesID = os.path.split(sesDir)[1]
+    print(sesID)
     imgs = {}
     for mod in ['CT1','T1','T2','FLAIR']:
         imgs[mod] = glob.glob(sesDir+'/'+mod+'*.nii.gz')[0]

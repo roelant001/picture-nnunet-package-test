@@ -11,17 +11,17 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest] # windows-latest,
-        # version: [3.10] #, 3.11, 3.12]
+        version: [3.9, 3.10, 3.11, 3.12]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.10' #${{ matrix.version }}
+          python-version: ${{ matrix.version }}
       - name: Download
-        run: wget --user-agent Mozilla/4.0 'https://download.wetransfer.com/eugv/134864de4a8d8dd3a1bede7d07d03c2a20231107143046/d028a7dc929eb265f594fbcd0051eae8beec6754/picture_nnunet_package-0.4.2-py3-none-any.whl?cf=y&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImRlZmF1bHQifQ.eyJleHAiOjE2OTkzNjgwODIsImlhdCI6MTY5OTM2NzQ4MiwiZG93bmxvYWRfaWQiOiI4NTNmNjBkOS0zMDdjLTQ1YTMtYjAxMi1hNTBjZjQ1NGExNjQiLCJzdG9yYWdlX3NlcnZpY2UiOiJzdG9ybSJ9.Uvg30IjS6PLaD7kKcRwgqcCfkcaZ-6GOEo6mnetlnCg' -O ./picture_nnunet_package-0.4.2-py3-none-any.whl
+        run: wget --user-agent Mozilla/4.0 'https://download.wetransfer.com/eugv/9e960ceda4aa0b4d92823550fe5f393a20231108064341/7129958646abc2fb1d86eacc95443773fa042856/picture_nnunet_package-0.4.3-py3-none-any.whl?cf=y&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImRlZmF1bHQifQ.eyJleHAiOjE2OTk0MjY0NTcsImlhdCI6MTY5OTQyNTg1NywiZG93bmxvYWRfaWQiOiI3YjU2MDI2OS00MjQyLTQ5OWQtYTdhYS05YzliMGE4NzU2MDAiLCJzdG9yYWdlX3NlcnZpY2UiOiJzdG9ybSJ9.eG4kxBwRD7hxDHPa7MvPopfyuQ_kpSirb6adPKwI_XU' -O ./picture_nnunet_package-0.4.3-py3-none-any.whl
       - name: Install
-        run: pip install ./picture_nnunet_package-0.4.2-py3-none-any.whl
-        # run: pip install picture-nnunet-package --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple
+        run: pip install ./picture_nnunet_package-0.4.3-py3-none-any.whl
+        #run: pip install picture-nnunet-package --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple
       - name: Test
         run: "python ./test.py"
