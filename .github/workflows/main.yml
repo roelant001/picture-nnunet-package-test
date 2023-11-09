@@ -24,6 +24,6 @@ jobs:
         run: pip cache purge
       - name: Install
         # run: pip install ./picture_nnunet_package-0.4.3-py3-none-any.whl
-        run: arch -arm64 python -m pip install picture-nnunet-package --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple --no-cache
+        run: arch -arm64e python -m pip install picture-nnunet-package --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple --no-cache
       - name: Test
         run: "python ./test.py"
