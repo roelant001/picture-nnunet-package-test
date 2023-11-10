@@ -22,6 +22,6 @@ jobs:
       #   run: wget --user-agent Mozilla/4.0 'https://download.wetransfer.com/eugv/9ea3dc6368f621edfa882cf21d7f236220231109084847/7129958646abc2fb1d86eacc95443773fa042856/picture_nnunet_package-0.4.3-py3-none-any.whl?cf=y&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImRlZmF1bHQifQ.eyJleHAiOjE2OTk1MjAzNjMsImlhdCI6MTY5OTUxOTc2MywiZG93bmxvYWRfaWQiOiJkZTBmMTQ3OC0zMWEyLTQyYmMtOGU0Yy01YTA2NzA1M2RkNzgiLCJzdG9yYWdlX3NlcnZpY2UiOiJzdG9ybSJ9.7Bt67tIo_D48XDM_sC2kARD00-qZIIWb6xcJTJpdeNI' -O ./picture_nnunet_package-0.4.3-py3-none-any.whl
       - name: Install
         # run: pip install ./picture_nnunet_package-0.4.3-py3-none-any.whl
-        run: pip install picture-nnunet-package --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple --no-cache
+        run: pip install picture-nnunet-package==0.4.1 --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple --no-cache
       - name: Test
         run: "python ./test.py"
