@@ -26,6 +26,6 @@ jobs:
       - name: fixants
         run: pip uninstall antspyx -y
       - name: fixants2
-        run: pip install antspyx==0.3.8 -y
+        run: pip install antspyx==0.3.8
       - name: Test
         run: "python ./test.py"
