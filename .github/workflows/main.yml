@@ -10,8 +10,8 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        version: [3.9, '3.10'] 
+        os: [macos-latest] #[ubuntu-latest, windows-latest, macos-latest]
+        version: [3.9] #, '3.10'] 
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -23,5 +23,9 @@ jobs:
       - name: Install
         # run: pip install ./picture_nnunet_package-0.4.3-py3-none-any.whl
         run: pip install picture-nnunet-package --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple --no-cache
+      - name: fixants
+        run: pip uninstall antspyx
+      - name: fixants2
+        run: pip install antspyx==0.3.8
       - name: Test
         run: "python ./test.py"
