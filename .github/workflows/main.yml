@@ -24,8 +24,8 @@ jobs:
         # run: pip install ./picture_nnunet_package-0.4.3-py3-none-any.whl
         run: pip install picture-nnunet-package --index-url https://gitlab.com/api/v4/projects/43010649/packages/pypi/simple --no-cache
       - name: fixants
-        run: pip uninstall antspyx
+        run: pip uninstall antspyx -y
       - name: fixants2
-        run: pip install antspyx==0.3.8
+        run: pip install antspyx==0.3.8 -y
       - name: Test
         run: "python ./test.py"
