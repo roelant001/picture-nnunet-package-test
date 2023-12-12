@@ -1,9 +1,8 @@
 name: Test-nnUNetPackage
 
-on: push
-# on:
-#   schedule:
-#     - cron: '0 14 * * 1'
+on: 
+  schedule:
+    - cron: '0 14 * * 1'
 
 
 jobs:
