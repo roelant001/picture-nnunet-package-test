@@ -1,6 +1,7 @@
 name: Test-nnUNetPackage
 
 on: 
+  push:
   schedule:
     - cron: '0 14 * * 1'
 
